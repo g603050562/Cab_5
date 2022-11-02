@@ -1,0 +1,32 @@
+buildscript {
+    ext {
+        kotlin_version = '1.5.10'
+    }
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        //gradle
+        classpath 'com.android.tools.build:gradle:3.4.2'
+        //android bugly
+        classpath 'com.tencent.bugly:symtabfileuploader:2.2.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+
+        flatDir {
+            dirs 'libs'
+        }
+        maven { url "http://lib.gcssloop.com:8081/repository/gcssloop-central/" }
+        jcenter()
+        google()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

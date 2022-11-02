@@ -1,0 +1,5 @@
+rootProject.name = "HelloPower"
+include ':eec_1'
+include ':romdownloader'
+include ':romlauncher'
+include ':othertest'

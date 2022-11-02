@@ -1,0 +1,80 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+
+    defaultConfig {
+        applicationId "client.NewElectric.app11"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 2
+        versionName "1.1"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+
+    }
+
+    buildTypes {
+        release {
+
+            lintOptions {
+                checkReleaseBuilds false
+                abortOnError false
+            }
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug{
+            minifyEnabled true
+        }
+    }
+
+    sourceSets {
+        main() {
+            jniLibs.srcDirs = ['src/main/libs']
+            jni.srcDirs = [] //屏蔽掉默认的jni编译生成过程
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    //腾讯bug管理平台
+    implementation 'com.tencent.bugly:crashreport:2.6.0'
+    implementation 'com.tencent.bugly:nativecrashreport:3.3.0'
+    //rxjava2
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.1'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    //butterknife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    //录制视频
+    implementation 'com.wonderkiln:camerakit:0.13.2'
+    //圆角控件
+    implementation 'com.gcssloop.widget:rclayout:1.8.1'
+    //okhttp(垃圾)
+    implementation("com.squareup.okhttp3:okhttp:4.9.1")
+    //httpclient
+    implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
+    //dialog框
+    implementation'com.wang.avi:library:2.1.3'
+    //bugly
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+    //本地jar
+    implementation files('libs/libs/picasso-2.5.2.jar')
+    implementation files('libs/libs/gson-2.8.1.jar')
+    implementation files('libs/libs/JavaWebSocket_fat.jar')
+    implementation files('libs/libs/core-3.2.1.jar')
+}

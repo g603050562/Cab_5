@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/panel"
+            android:layout_width="800dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:background="@drawable/button_corners_yellow_radius_15">
+
+            <LinearLayout
+                android:id="@+id/exchange_panel"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="horizontal"
+                android:paddingBottom="30dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/input_panel"
+                    android:layout_weight="1"
+                    android:layout_width="1px"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <TextView
+                        android:id="@+id/input"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="50%"
+                        android:textStyle="bold"
+                        android:textColor="#ffffff"
+                        android:textSize="100dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="插入电池剩余电量"
+                        android:textColor="#333333"
+                        android:textSize="19dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/image_panel"
+                    android:layout_weight="0.5"
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:visibility="invisible">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:padding="30dp"
+                        android:src="@drawable/point_white"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/output_panel"
+                    android:layout_weight="1"
+                    android:layout_width="1px"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <TextView
+                        android:id="@+id/output"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="50%"
+                        android:textColor="#ffffff"
+                        android:textSize="100dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="弹出电池剩余电量"
+                        android:textColor="#333333"
+                        android:textSize="19dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_corners_white_radius_15"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="15dp">
+
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/black_exhange_bar_1"/>
+
+                    <TextView
+                        android:id="@+id/t_2"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000000"
+                        android:textSize="35dp"
+                        android:layout_marginLeft="25dp"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:layout_width="2px"
+                    android:layout_height="match_parent"
+                    android:background="#cccccc"
+                    android:layout_marginRight="20dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/t_1"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:textColor="#333333"
+                        android:textSize="22dp" />
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
